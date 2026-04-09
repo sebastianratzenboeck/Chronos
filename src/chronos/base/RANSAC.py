@@ -1,6 +1,6 @@
 import numpy as np
 from shapely.geometry.polygon import LineString
-from base.Distances import lineseg_dists
+from chronos.base.Distances import lineseg_dists
 from scipy import stats
 
 

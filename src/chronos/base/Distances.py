@@ -1,6 +1,6 @@
 import numpy as np
-from base.DataManager import PhotManager
-from utils.utils import chunks
+from chronos.base.DataManager import PhotManager
+from chronos.utils.utils import chunks
 import multiprocessing
 import copy
 from scipy.stats import triang

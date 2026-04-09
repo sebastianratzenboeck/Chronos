@@ -4,7 +4,7 @@ import glob
 import copy
 import numpy as np
 import pandas as pd
-from isochrone.ICBase import ICBase
+from chronos.isochrone.ICBase import ICBase
 
 
 class Baraffe15(ICBase):

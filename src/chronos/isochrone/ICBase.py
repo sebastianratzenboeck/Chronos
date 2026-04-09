@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 from scipy.interpolate import interp1d
-from utils.utils import resolve_duplicates
+from chronos.utils.utils import resolve_duplicates
 from itertools import product
 from scipy.interpolate import RegularGridInterpolator, NearestNDInterpolator
 

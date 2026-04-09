@@ -1,6 +1,6 @@
 import numpy as np
-from base.ChronosBase import ChronosBase
-from base.RANSAC import RansacIsochrone
+from chronos.base.ChronosBase import ChronosBase
+from chronos.base.RANSAC import RansacIsochrone
 
 
 class ChronosRANSAC(ChronosBase):

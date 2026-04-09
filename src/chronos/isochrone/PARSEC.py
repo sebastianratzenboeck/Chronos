@@ -2,7 +2,7 @@ import re
 import os
 import glob
 import pandas as pd
-from isochrone.ICBase import ICBase
+from chronos.isochrone.ICBase import ICBase
 
 
 class PARSEC(ICBase):
