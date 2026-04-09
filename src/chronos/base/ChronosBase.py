@@ -6,10 +6,7 @@ from chronos.base.Distances import Distance
 from chronos.utils.utils import isin_range
 # import imf
 from skopt import gp_minimize
-import os
-
-# TODO: Update data path here
-data_path = '/Users/alena/PycharmProjects/Chronos/data/'
+from chronos import DATA_DIR
 
 
 class ChronosBase:
@@ -20,14 +17,14 @@ class ChronosBase:
         )
         # Check for Baraffe15 isochrones
         if ('baraffe' in models.lower()) or ('bhac' in models.lower()):
-            self.isochrone_handler = Baraffe15(os.path.join(data_path, 'baraffe_files'), file_ending='GAIA')
+            self.isochrone_handler = Baraffe15(DATA_DIR / 'baraffe_files', file_ending='GAIA')
             self.fitting_kwargs['fit_range'] = (-2, 12)
         elif 'dartmouth' in models.lower():
-            self.isochrone_handler = Dartmouth(os.path.join(data_path, 'dartmouth_files'), file_ending='Gaia')
+            self.isochrone_handler = Dartmouth(DATA_DIR / 'dartmouth_files', file_ending='Gaia')
             self.fitting_kwargs['fit_range'] = (-2, 12)
         # Fail save is always PARSEC isochrones
         else:
-            self.isochrone_handler = PARSEC(os.path.join(data_path, 'parsec_files'), file_ending='dat')
+            self.isochrone_handler = PARSEC(DATA_DIR / 'parsec_files', file_ending='dat')
         self.distance_handler = Distance(use_grp=use_grp, data=data, **kwargs)
         self.bounds = self.auto_bounds()
         # self.kroupa_imf = imf.Kroupa()
