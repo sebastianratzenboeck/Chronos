@@ -26,10 +26,13 @@ venv/
 
 # Jupyter
 .ipynb_checkpoints
-*.ipynb
+
 
 # OS
 .DS_Store
+
+# Large data files
+src/chronos/data/dustmap_edenhofer/
 
 # Notebooks, scripts (not part of the package)
 notebooks/
