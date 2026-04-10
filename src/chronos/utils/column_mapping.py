@@ -1,0 +1,197 @@
+"""Mapping between VizieR (CDS) and Gaia Archive (TAP) column names for Gaia DR3."""
+
+VIZIER_TO_TAP = {
+    # Identifiers
+    "DR3Name": "designation",
+    "Source": "source_id",
+    "SolID": "solution_id",
+    "RandomI": "random_index",
+    # Astrometry
+    "RADeg": "ra",
+    "e_RADeg": "ra_error",
+    "DEDeg": "dec",
+    "e_DEDeg": "dec_error",
+    "Plx": "parallax",
+    "e_Plx": "parallax_error",
+    "RPlx": "parallax_over_error",
+    "PM": "pm",
+    "pmRA": "pmra",
+    "e_pmRA": "pmra_error",
+    "pmDE": "pmdec",
+    "e_pmDE": "pmdec_error",
+    # Correlations
+    "RADEcor": "ra_dec_corr",
+    "RAPlxcor": "ra_parallax_corr",
+    "RApmRAcor": "ra_pmra_corr",
+    "RApmDEcor": "ra_pmdec_corr",
+    "DEPlxcor": "dec_parallax_corr",
+    "DEpmRAcor": "dec_pmra_corr",
+    "DEpmDEcor": "dec_pmdec_corr",
+    "PlxpmRAcor": "parallax_pmra_corr",
+    "PlxpmDEcor": "parallax_pmdec_corr",
+    "pmRApmDEcor": "pmra_pmdec_corr",
+    # Astrometric quality
+    "NAL": "astrometric_n_obs_al",
+    "NAC": "astrometric_n_obs_ac",
+    "NgAL": "astrometric_n_good_obs_al",
+    "NbAL": "astrometric_n_bad_obs_al",
+    "gofAL": "astrometric_gof_al",
+    "chi2AL": "astrometric_chi2_al",
+    "epsi": "astrometric_excess_noise",
+    "sepsi": "astrometric_excess_noise_sig",
+    "Solved": "astrometric_params_solved",
+    "APF": "astrometric_primary_flag",
+    "nueff": "nu_eff_used_in_astrometry",
+    "pscol": "pseudocolour",
+    "e_pscol": "pseudocolour_error",
+    "RApscolCorr": "ra_pseudocolour_corr",
+    "DEpscolCorr": "dec_pseudocolour_corr",
+    "PlxpscolCorr": "parallax_pseudocolour_corr",
+    "pmRApscolCorr": "pmra_pseudocolour_corr",
+    "pmDEpscolCorr": "pmdec_pseudocolour_corr",
+    "MatchObsA": "astrometric_matched_transits",
+    "Nper": "visibility_periods_used",
+    "amax": "astrometric_sigma5d_max",
+    "MatchObs": "matched_transits",
+    "NewMatchObs": "new_matched_transits",
+    "MatchObsrm": "matched_transits_removed",
+    # Image parameters
+    "IPDgofha": "ipd_gof_harmonic_amplitude",
+    "IPDgofhp": "ipd_gof_harmonic_phase",
+    "IPDfmp": "ipd_frac_multi_peak",
+    "IPDfow": "ipd_frac_odd_win",
+    "RUWE": "ruwe",
+    # Scan direction
+    "SDSk1": "scan_direction_strength_k1",
+    "SDSk2": "scan_direction_strength_k2",
+    "SDSk3": "scan_direction_strength_k3",
+    "SDSk4": "scan_direction_strength_k4",
+    "SDMk1": "scan_direction_mean_k1",
+    "SDMk2": "scan_direction_mean_k2",
+    "SDMk3": "scan_direction_mean_k3",
+    "SDMk4": "scan_direction_mean_k4",
+    # Duplicated source
+    "Dup": "duplicated_source",
+    # Photometry - G band
+    "o_Gmag": "phot_g_n_obs",
+    "FG": "phot_g_mean_flux",
+    "e_FG": "phot_g_mean_flux_error",
+    "RFG": "phot_g_mean_flux_over_error",
+    "Gmag": "phot_g_mean_mag",
+    "e_Gmag": "phot_g_mean_mag_error",
+    # Photometry - BP band
+    "o_BPmag": "phot_bp_n_obs",
+    "FBP": "phot_bp_mean_flux",
+    "e_FBP": "phot_bp_mean_flux_error",
+    "RFBP": "phot_bp_mean_flux_over_error",
+    "BPmag": "phot_bp_mean_mag",
+    "e_BPmag": "phot_bp_mean_mag_error",
+    # Photometry - RP band
+    "o_RPmag": "phot_rp_n_obs",
+    "FRP": "phot_rp_mean_flux",
+    "e_FRP": "phot_rp_mean_flux_error",
+    "RFRP": "phot_rp_mean_flux_over_error",
+    "RPmag": "phot_rp_mean_mag",
+    "e_RPmag": "phot_rp_mean_mag_error",
+    # Photometry - excess and blending
+    "E(BP/RP)": "phot_bp_rp_excess_factor",
+    "NBPcont": "phot_bp_n_contaminated_transits",
+    "NBPblend": "phot_bp_n_blended_transits",
+    "NRPcont": "phot_rp_n_contaminated_transits",
+    "NRPblend": "phot_rp_n_blended_transits",
+    "Mode": "phot_proc_mode",
+    # Colors
+    "BP-RP": "bp_rp",
+    "BP-G": "bp_g",
+    "G-RP": "g_rp",
+    # Radial velocity
+    "RV": "radial_velocity",
+    "e_RV": "radial_velocity_error",
+    "n_RV": "rv_method_used",
+    "o_RV": "rv_nb_transits",
+    "o_RVd": "rv_nb_deblended_transits",
+    "RVNper": "rv_visibility_periods_used",
+    "RVS/N": "rv_expected_sig_to_noise",
+    "RVgof": "rv_renormalised_gof",
+    "RVchi2": "rv_chisq_pvalue",
+    "RVTdur": "rv_time_duration",
+    "RVamp": "rv_amplitude_robust",
+    "RVtempTeff": "rv_template_teff",
+    "RVtemplogg": "rv_template_logg",
+    "RVtemp[Fe/H]": "rv_template_fe_h",
+    "Vatmparam": "rv_atm_param_origin",
+    # Spectroscopic
+    "Vbroad": "vbroad",
+    "e_Vbroad": "vbroad_error",
+    "o_Vbroad": "vbroad_nb_transits",
+    "GRVSmag": "grvs_mag",
+    "e_GRVSmag": "grvs_mag_error",
+    "o_GRVSmag": "grvs_mag_nb_transits",
+    "RVSS/N": "rvs_spec_sig_to_noise",
+    # Variability
+    "VarFlag": "phot_variable_flag",
+    # Galactic / ecliptic coordinates
+    "GLON": "l",
+    "GLAT": "b",
+    "ELON": "ecl_lon",
+    "ELAT": "ecl_lat",
+    # Flags
+    "QSO": "in_qso_candidates",
+    "Gal": "in_galaxy_candidates",
+    "NSS": "non_single_star",
+    "XPcont": "has_xp_continuous",
+    "XPsamp": "has_xp_sampled",
+    "RVS": "has_rvs",
+    "EpochPh": "has_epoch_photometry",
+    "EpochRV": "has_epoch_rv",
+    "MCMCGSP": "has_mcmc_gspphot",
+    "MCMCMSC": "has_mcmc_msc",
+    "And": "in_andromeda_survey",
+    # Classification probabilities
+    "PQSO": "classprob_dsc_combmod_quasar",
+    "PGal": "classprob_dsc_combmod_galaxy",
+    "PSS": "classprob_dsc_combmod_star",
+    # GSP-Phot astrophysical parameters
+    "Teff": "teff_gspphot",
+    "b_Teff": "teff_gspphot_lower",
+    "B_Teff": "teff_gspphot_upper",
+    "logg": "logg_gspphot",
+    "b_logg": "logg_gspphot_lower",
+    "B_logg": "logg_gspphot_upper",
+    "[Fe/H]": "mh_gspphot",
+    "b_[Fe/H]": "mh_gspphot_lower",
+    "B_[Fe/H]": "mh_gspphot_upper",
+    "Dist": "distance_gspphot",
+    "b_Dist": "distance_gspphot_lower",
+    "B_Dist": "distance_gspphot_upper",
+    "A0": "azero_gspphot",
+    "b_A0": "azero_gspphot_lower",
+    "B_A0": "azero_gspphot_upper",
+    "AG": "ag_gspphot",
+    "b_AG": "ag_gspphot_lower",
+    "B_AG": "ag_gspphot_upper",
+    "E(BP-RP)": "ebpminrp_gspphot",
+    "b_E(BP-RP)": "ebpminrp_gspphot_lower",
+    "B_E(BP-RP)": "ebpminrp_gspphot_upper",
+    "Lib": "libname_gspphot",
+    # Epoch J2000 positions
+    "RAJ2000": "ra",
+    "DEJ2000": "dec",
+    "e_RAJ2000": "ra_error",
+    "e_DEJ2000": "dec_error",
+    "RADEcorJ2000": "ra_dec_corr",
+}
+
+TAP_TO_VIZIER = {v: k for k, v in VIZIER_TO_TAP.items()}
+
+
+def rename_vizier_to_tap(df):
+    """Rename VizieR (CDS) column names to Gaia Archive (TAP) names in-place."""
+    rename = {k: v for k, v in VIZIER_TO_TAP.items() if k in df.columns}
+    return df.rename(columns=rename)
+
+
+def rename_tap_to_vizier(df):
+    """Rename Gaia Archive (TAP) column names to VizieR (CDS) names in-place."""
+    rename = {k: v for k, v in TAP_TO_VIZIER.items() if k in df.columns}
+    return df.rename(columns=rename)
