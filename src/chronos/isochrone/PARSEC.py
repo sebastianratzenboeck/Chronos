@@ -47,7 +47,7 @@ class PARSEC(ICBase):
         :param fname: File name containing information on a single isochrone
         :return: x-y-Coordinates of a chosen isochrone, age, metallicity
         """
-        df_iso = pd.read_csv(fname, delim_whitespace=True, comment=self.comment, header=None)
+        df_iso = pd.read_csv(fname, sep=r'\s+', comment=self.comment, header=None)
         # Read first line and extract column names
         with open(fname) as f:
             for line in f:
