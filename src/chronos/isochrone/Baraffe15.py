@@ -4,7 +4,7 @@ import glob
 import copy
 import numpy as np
 import pandas as pd
-from isochrone.ICBase import ICBase
+from chronos.isochrone.ICBase import ICBase
 
 
 class Baraffe15(ICBase):
@@ -46,7 +46,7 @@ class Baraffe15(ICBase):
         :param fname: File name containing information on a single isochrone
         :return: x-y-Coordinates of a chosen isochrone, age, metallicity
         """
-        df_iso = pd.read_csv(fname, delim_whitespace=True, header=None, comment=self.comment)
+        df_iso = pd.read_csv(fname, sep=r'\s+', header=None, comment=self.comment)
         # Read first line and extract column names
         with open(fname) as f:
             for line in f:
@@ -74,7 +74,7 @@ class Baraffe15(ICBase):
 
                 if line.startswith(self.colnames['age_start']):
                     line = re.sub(r'\t', ' ', line)  # remove tabs
-                    age = float(re.findall("\d+\.\d+", line)[0])
+                    age = float(re.findall(r"\d+\.\d+", line)[0])
                     logAge = np.round(np.log10(age * 10**9), decimals=2)
                     logAge_info.append(logAge)
                     # Save infos

@@ -3,7 +3,7 @@ import numpy as np
 import os
 import glob
 import pandas as pd
-from isochrone.ICBase import ICBase
+from chronos.isochrone.ICBase import ICBase
 
 
 class Dartmouth(ICBase):

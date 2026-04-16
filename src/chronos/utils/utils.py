@@ -32,3 +32,10 @@ def merge_dicts(*dict_args):
     for dictionary in dict_args:
         result.update(dictionary)
     return result
+
+
+def mode_reals(array, bins=100):
+    counts, bin_edges = np.histogram(array, bins=bins)
+    # Take left edges as approximation for bin midpoint
+    bins_left_edges = bin_edges[:-1]
+    return bins_left_edges[np.argmax(counts)]

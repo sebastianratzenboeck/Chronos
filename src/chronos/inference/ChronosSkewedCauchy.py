@@ -1,5 +1,5 @@
 import numpy as np
-from base.ChronosBase import ChronosBase
+from chronos.base.ChronosBase import ChronosBase
 import scipy.stats as st
 
 

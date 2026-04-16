@@ -1,5 +1,5 @@
 import numpy as np
-from base.DataManager import PhotManager
+from chronos.base.DataManager import PhotManager
 import copy
 from scipy.stats import triang
 
